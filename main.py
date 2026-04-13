@@ -11,3 +11,12 @@ Note:   any user input/output should be done in the module 'tui'
 
 import tui
 tui.display_header()
+
+choice = tui.get_menu_choice()
+
+if choice == "A":
+    print("[A] View Data"),
+elif choice == "B":
+    print("[B] Visualise Data"),
+else:
+    print("[X] Exit")
