@@ -8,20 +8,18 @@ Note:   any user input/output should be done in the module 'tui'
         any visualisation should be done in the module 'visual'
 """
 
-
 import tui
+
 tui.display_header()
 
 while True:
     print("")
-
     choice = tui.get_menu_choice()
 
     if choice == "A":
-      print("[A] View Data"),
-
+        print("View Data")
     elif choice == "B":
-      print("[B] Visualise Data"),
-
+        print("Visualise Data"),
     else:
-     break
+        print("Exit"),
+        break
