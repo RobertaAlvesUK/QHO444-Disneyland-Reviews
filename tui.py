@@ -6,4 +6,9 @@ A function may also need to format and/or structure a response e.g. return a lis
 Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
+def display_header():
+    print("--------------------------")
+    print("Disneyland Review Analyser")
+    print("--------------------------")
+    print(" \n ")
 

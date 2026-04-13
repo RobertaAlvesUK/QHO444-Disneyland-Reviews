@@ -9,4 +9,5 @@ Note:   any user input/output should be done in the module 'tui'
 """
 
 
-
+import tui
+tui.display_header()
