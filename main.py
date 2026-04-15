@@ -9,11 +9,9 @@ Note:   any user input/output should be done in the module 'tui'
 """
 
 import tui
-
 tui.display_header()
 
 import process
-
 dataset = process.process_data()
 
 while True:
@@ -21,7 +19,7 @@ while True:
     choice = tui.get_menu_choice()
 
     if choice == "A":
-        print("View Data")
+        tui.display_data(dataset)
     elif choice == "B":
         print("Visualise Data"),
     else:

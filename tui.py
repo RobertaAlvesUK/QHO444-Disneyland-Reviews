@@ -12,13 +12,14 @@ def display_header():
     print("--------------------------")
     print(" \n ")
 
-
-
 def get_menu_choice():
     print("[A] View Data")
     print("[B] Visualise Data")
     print("[X] Exit")
     choice = input("Please enter the letter which corresponds with your desired menu choice: ")
     return choice
+
+def display_data(dataset):
+    print(len(dataset))
 
 
