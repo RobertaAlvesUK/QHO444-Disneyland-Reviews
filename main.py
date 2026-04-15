@@ -12,6 +12,10 @@ import tui
 
 tui.display_header()
 
+import process
+
+dataset = process.process_data()
+
 while True:
     print("")
     choice = tui.get_menu_choice()
