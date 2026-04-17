@@ -22,7 +22,9 @@ while True:
             tui.display_data(dataset)
             data_choice = tui.get_data_choice()
             if data_choice == "A":
-                print(" View Reviews by Park")
+                park_counts = process.get_reviews_by_park(dataset)
+                tui.display_reviews_by_park(park_counts)
+
             elif data_choice == "B":
                 print(" View Reviews by Country")
             else:

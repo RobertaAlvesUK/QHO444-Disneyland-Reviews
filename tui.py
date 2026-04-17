@@ -26,5 +26,9 @@ def get_data_choice():
     choice = input("Please enter the letter which corresponds with your desired menu choice: ")
     return choice
 
+def display_reviews_by_park(park_counts):
+    for row in park_counts:
+        print(row,park_counts[row])
+
 def display_data(dataset):
     print(len(dataset))

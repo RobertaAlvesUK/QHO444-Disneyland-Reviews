@@ -15,7 +15,7 @@ def process_data():
 
 def get_reviews_by_park(dataset):
     park_counts = {}
-    for row in dataset:
+    for row in dataset[1:]:
         if row[4] not in park_counts:
             park_counts[row[4]] = 1
         else:
