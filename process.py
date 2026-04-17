@@ -12,3 +12,16 @@ def process_data():
 
     dataset = list(csv_reader)
     return dataset
+
+def get_reviews_by_park(dataset):
+    park_counts = {}
+    for row in dataset:
+        if row[4] not in park_counts:
+            park_counts[row[4]] = 1
+        else:
+            park_counts[row[4]] += 1
+
+    return park_counts
+
+
+
