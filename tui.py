@@ -30,5 +30,9 @@ def display_reviews_by_park(park_counts):
     for row in park_counts:
         print(row,park_counts[row])
 
+def display_ratings_by_country(country_counts):
+    for row in country_counts:
+        print(row,country_counts[row])
+
 def display_data(dataset):
     print(len(dataset))

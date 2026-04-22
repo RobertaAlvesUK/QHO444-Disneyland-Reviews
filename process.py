@@ -23,5 +23,14 @@ def get_reviews_by_park(dataset):
 
     return park_counts
 
+def get_ratings_by_country(dataset):
+    country_counts = {}
+    for row in dataset[1:]:
+        if row[3] not in country_counts:
+            country_counts[row[3]] = 1
+        else:
+            country_counts[row[3]] += 1
+
+    return country_counts
 
 
