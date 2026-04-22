@@ -29,11 +29,11 @@ def get_data_choice():
 
 def display_reviews_by_park(park_counts):
     for row in park_counts:
-        print(row,park_counts[row])
+        print(row[0], row[1])
 
 def display_ratings_by_country(country_counts):
     for row in country_counts:
-        print(row[0],row[1])
+        print(row[0], row[1])
 
 def display_data(dataset):
     print(len(dataset))

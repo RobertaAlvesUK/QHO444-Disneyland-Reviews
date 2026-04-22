@@ -20,8 +20,9 @@ def get_reviews_by_park(dataset):
             park_counts[row[4]] = 1
         else:
             park_counts[row[4]] += 1
+    sorted_park_counts = sorted (park_counts.items(), key = lambda x : x[1], reverse = True)
 
-    return park_counts
+    return sorted_park_counts
 
 def get_ratings_by_country(dataset):
     country_counts = {}
