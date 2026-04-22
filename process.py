@@ -30,7 +30,8 @@ def get_ratings_by_country(dataset):
             country_counts[row[3]] = 1
         else:
             country_counts[row[3]] += 1
+    sorted_country_counts = sorted (country_counts.items(), key = lambda x : x[1], reverse = True)
 
-    return country_counts
+    return sorted_country_counts
 
 
