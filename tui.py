@@ -20,8 +20,9 @@ def get_menu_choice():
     return choice
 
 def get_data_choice():
-    print("[A] View Reviews by Park")
-    print("[B] View Ratings by Country")
+    print("[A] Most Reviewed Parks")
+    print("[B] Park Ranking by Nationality")
+    print("[C] Most Popular Month by Park")
     print("[X] Return to Main Menu")
     choice = input("Please enter the letter which corresponds with your desired menu choice: ")
     return choice

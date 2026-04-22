@@ -29,6 +29,9 @@ while True:
                 country_counts = process.get_ratings_by_country(dataset)
                 tui.display_ratings_by_country(country_counts)
 
+            elif data_choice == "C":
+                pass
+
             else:
                 print("Return Main Menu")
 
