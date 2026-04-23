@@ -13,13 +13,11 @@ tui.display_header()
 
 import process
 dataset = process.process_data()
-
+tui.display_data(dataset)
 while True:
-    print("")
     choice = tui.get_menu_choice()
 
     if choice == "A":
-            tui.display_data(dataset)
             data_choice = tui.get_data_choice()
             if data_choice == "A":
                 park_counts = process.get_reviews_by_park(dataset)

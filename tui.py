@@ -10,9 +10,10 @@ def display_header():
     print("--------------------------")
     print("Disneyland Review Analyser")
     print("--------------------------")
-    print(" \n ")
+    print(" ")
 
 def get_menu_choice():
+    print()
     print("[A] View Data")
     print("[B] Visualise Data")
     print("[X] Exit")
@@ -20,6 +21,7 @@ def get_menu_choice():
     return choice
 
 def get_data_choice():
+    print()
     print("[A] Most Reviewed Parks")
     print("[B] Park Ranking by Nationality")
     print("[C] Most Popular Month by Park")
@@ -28,12 +30,14 @@ def get_data_choice():
     return choice
 
 def display_reviews_by_park(park_counts):
+    print()
     for row in park_counts:
         print(row[0], row[1])
 
 def display_ratings_by_country(country_counts):
+    print()
     for row in country_counts:
         print(row[0], row[1])
 
 def display_data(dataset):
-    print(len(dataset))
+    print(f"Dataset loaded: {(len(dataset))} reviews")
