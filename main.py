@@ -18,6 +18,7 @@ while True:
     choice = tui.get_menu_choice()
 
     if choice == "A":
+        while True:
             data_choice = tui.get_data_choice()
             if data_choice == "A":
                 park_counts = process.get_reviews_by_park(dataset)
@@ -30,12 +31,20 @@ while True:
             elif data_choice == "C":
                 pass
 
+            elif data_choice == "X":
+                print("Returning to main menu.")
+                break
+
             else:
-                print("Return Main Menu")
+                print("Invalid choice, please try again.")
 
     elif choice == "B":
-        print("Visualise Data"),
-    else:
-        print("Exit"),
+        print("Visualise Data.")
+
+    elif choice == "X":
+        print("Goodbye!"),
         break
+    else:
+        print("Invalid choice, please try again.")
+
 
