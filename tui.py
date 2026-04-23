@@ -16,7 +16,7 @@ def get_menu_choice():
     print("[A] View Data")
     print("[B] Visualise Data")
     print("[X] Exit")
-    choice = input("Please enter the letter which corresponds with your desired menu choice: ")
+    choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
     return choice
 
 def get_data_choice():
@@ -24,7 +24,7 @@ def get_data_choice():
     print("[B] Park Ranking by Nationality")
     print("[C] Most Popular Month by Park")
     print("[X] Return to Main Menu")
-    choice = input("Please enter the letter which corresponds with your desired menu choice: ")
+    choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
     return choice
 
 def display_reviews_by_park(park_counts):
