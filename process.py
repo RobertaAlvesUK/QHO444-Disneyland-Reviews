@@ -7,10 +7,9 @@ It is likely that most sections will require functions to be placed in this modu
 import csv
 
 def process_data():
-    csv_file = open("data/Disneyland_reviews.csv")
-    csv_reader = csv.reader(csv_file)
-
-    dataset = list(csv_reader)
+    with open("data/Disneyland_reviews.csv") as csv_file:
+       csv_reader = csv.reader(csv_file)
+       dataset = list(csv_reader)
     return dataset
 
 def get_reviews_by_park(dataset):

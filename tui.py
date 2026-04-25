@@ -12,6 +12,9 @@ def display_header():
     print("--------------------------")
     print(" ")
 
+def display_data(dataset):
+    print(f"Dataset loaded: {(len(dataset))} reviews")
+
 def get_menu_choice():
     print()
     print("[A] View Data")
@@ -45,5 +48,3 @@ def display_park_months(park_months):
         best_month = max(park_months[row], key=park_months[row].get)
         print("Best Month:", row, best_month)
 
-def display_data(dataset):
-    print(f"Dataset loaded: {(len(dataset))} reviews")
