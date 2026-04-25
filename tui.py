@@ -42,10 +42,8 @@ def display_ratings_by_country(country_counts):
 def display_park_months(park_months):
     print()
     for row in park_months:
-        print(row)
-        for month in park_months[row]:
-            print(month, park_months[row][month])
-
+        best_month = max(park_months[row], key=park_months[row].get)
+        print("Best Month:", row, best_month)
 
 def display_data(dataset):
     print(f"Dataset loaded: {(len(dataset))} reviews")
