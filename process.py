@@ -23,6 +23,13 @@ def get_reviews_by_park(dataset):
 
     return sorted_park_counts
 
+def get_park_reviews(dataset, park_name):
+    reviews = []
+    for row in dataset[1:]:
+        if row[4] == park_name:
+            reviews.append(row)
+    return reviews
+
 def get_ratings_by_country(dataset):
     country_counts = {}
     for row in dataset[1:]:

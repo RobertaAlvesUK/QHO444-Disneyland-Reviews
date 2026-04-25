@@ -15,6 +15,28 @@ def display_header():
 def display_data(dataset):
     print(f"Dataset loaded: {(len(dataset))} reviews")
 
+def display_reviews_by_park(park_counts):
+    print()
+    for row in park_counts:
+        print(row[0], row[1])
+
+def display_ratings_by_country(country_counts):
+    print()
+    for row in country_counts:
+        print(row[0], row[1])
+
+def display_park_months(park_months):
+    print()
+    for row in park_months:
+        best_month = max(park_months[row], key=park_months[row].get)
+        print("Best Month:", row, best_month)
+
+def display_park_reviews(park_reviews):
+    print()
+    for row in park_reviews:
+       print(f"Rating:{row[1]}, Date: {row[2]}, Location: {row[3]}")
+
+
 def get_menu_choice():
     print()
     print("[A] View Data")
@@ -32,19 +54,14 @@ def get_data_choice():
     choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
     return choice
 
-def display_reviews_by_park(park_counts):
+def get_park_name():
     print()
-    for row in park_counts:
-        print(row[0], row[1])
+    print("[1] Disneyland_California")
+    print("[2] Disneyland_Paris")
+    print("[3] Disneyland_Hongkong")
+    choice = input("Please enter the park number: ")
+    return choice
 
-def display_ratings_by_country(country_counts):
-    print()
-    for row in country_counts:
-        print(row[0], row[1])
 
-def display_park_months(park_months):
-    print()
-    for row in park_months:
-        best_month = max(park_months[row], key=park_months[row].get)
-        print("Best Month:", row, best_month)
+
 
