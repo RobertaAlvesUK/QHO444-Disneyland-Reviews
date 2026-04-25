@@ -39,5 +39,13 @@ def display_ratings_by_country(country_counts):
     for row in country_counts:
         print(row[0], row[1])
 
+def display_park_months(park_months):
+    print()
+    for row in park_months:
+        print(row)
+        for month in park_months[row]:
+            print(month, park_months[row][month])
+
+
 def display_data(dataset):
     print(f"Dataset loaded: {(len(dataset))} reviews")

@@ -29,7 +29,8 @@ while True:
                 tui.display_ratings_by_country(country_counts)
 
             elif data_choice == "C":
-                pass
+                park_months = process.get_park_months(dataset)
+                tui.display_park_months(park_months)
 
             elif data_choice == "X":
                 print("Returning to main menu.")
