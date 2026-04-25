@@ -33,6 +33,7 @@ def display_park_months(park_months):
 
 def display_park_reviews(park_reviews):
     print()
+    print(f"Total Reviews Found: {len(park_reviews)}")
     for row in park_reviews:
        print(f"Rating:{row[1]}, Date: {row[2]}, Location: {row[3]}")
 
