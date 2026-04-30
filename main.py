@@ -35,6 +35,7 @@ while True:
                 tui.display_park_reviews(park_counts)
 
             elif data_choice == "B":
+
                 country_counts = process.get_ratings_by_country(dataset)
                 tui.display_ratings_by_country(country_counts)
 

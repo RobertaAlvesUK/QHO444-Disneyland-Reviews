@@ -54,3 +54,10 @@ def get_park_months(dataset):
             else:
                 park_months[row[4]][month] += 1
     return park_months
+
+def get_reviews_by_park_and_country(dataset, park_name, country_name):
+    reviews = []
+    for row in dataset:
+        if row[4] == park_name and row[3] == country_name:
+            reviews.append(row)
+    return reviews

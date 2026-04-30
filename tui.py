@@ -37,6 +37,8 @@ def display_park_reviews(park_reviews):
     for row in park_reviews:
        print(f"Rating:{row[1]}, Date: {row[2]}, Location: {row[3]}")
 
+def display_reviews_by_park_and_country(count, park_name, country_name):
+    print(f"There are {count} reviews from {country_name} for {park_name}")
 
 def get_menu_choice():
     print()
@@ -63,6 +65,8 @@ def get_park_name():
     choice = input("Please enter the park number: ")
     return choice
 
-
+def get_country_name():
+    choice = input("Please enter a country name: ")
+    return choice
 
 
