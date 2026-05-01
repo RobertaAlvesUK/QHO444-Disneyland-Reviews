@@ -62,6 +62,7 @@ def get_park_name():
     print("[1] Disneyland_California")
     print("[2] Disneyland_Paris")
     print("[3] Disneyland_Hongkong")
+    print("[X] Return to Main Menu")
     choice = input("Please enter the park number: ")
     return choice
 

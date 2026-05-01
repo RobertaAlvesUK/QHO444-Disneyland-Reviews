@@ -35,6 +35,7 @@ while True:
                 tui.display_park_reviews(park_counts)
 
             elif data_choice == "B":
+                park_name = ""
                 while True:
                     park_choice = tui.get_park_name()
                     if park_choice == "1":
@@ -43,12 +44,14 @@ while True:
                         park_name = "Disneyland_Paris"
                     elif park_choice == "3":
                         park_name = "Disneyland_HongKong"
+                    elif park_choice == "X":
+                        break
                     else:
                         print("Invalid choice, please try again.")
-
-
-                country_counts = process.get_ratings_by_country(dataset)
-                tui.display_ratings_by_country(country_counts)
+                    if park_name != "":
+                       country_name = tui.get_country_name()
+                       reviews = process.get_reviews_by_park_and_country(dataset, park_name, country_name)
+                       tui.display_reviews_by_park_and_country(len(reviews), park_name, country_name)
 
             elif data_choice == "C":
                 park_months = process.get_park_months(dataset)
