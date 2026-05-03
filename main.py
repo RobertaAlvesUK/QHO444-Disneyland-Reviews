@@ -57,6 +57,24 @@ while True:
                 park_months = process.get_park_months(dataset)
                 tui.display_park_months(park_months)
 
+            elif data_choice == "D":
+                park_name = ""
+                while True:
+                    park_choice = tui.get_park_name()
+                    if park_choice == "1":
+                        park_name = "Disneyland_California"
+                    elif park_choice == "2":
+                        park_name = "Disneyland_Paris"
+                    elif park_choice == "3":
+                        park_name = "Disneyland_HongKong"
+                    elif park_choice == "X":
+                        break
+                    else:
+                        print("Invalid choice, please try again.")
+                    if park_name != "":
+                        year = tui.get_year()
+                        avg = process.get_avg_ratings_by_park_and_year(dataset, park_name, year)
+                        tui.display_avg_by_park_and_year(avg, park_name, year)
 
             elif data_choice == "X":
                 print("Returning to main menu.")

@@ -61,3 +61,15 @@ def get_reviews_by_park_and_country(dataset, park_name, country_name):
         if row[4] == park_name and row[3] == country_name:
             reviews.append(row)
     return reviews
+
+def get_avg_ratings_by_park_and_year(dataset, park_name, year):
+    total = 0
+    count = 0
+    for row in dataset:
+        if row[4] == park_name and row[2].startswith(year):
+            total += int(row[1])
+            count += 1
+    if count > 0:
+        return round(total/count, 2)
+    else:
+        return 0
