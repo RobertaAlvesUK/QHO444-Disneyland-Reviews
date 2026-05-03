@@ -9,9 +9,12 @@ Note:   any user input/output should be done in the module 'tui'
 """
 
 import tui
+import process
+import visual
+from process import get_park_reviews
+
 tui.display_header()
 
-import process
 dataset = process.process_data()
 tui.display_data(dataset)
 while True:
@@ -84,7 +87,15 @@ while True:
                 print("Invalid choice, please try again.")
 
     elif choice == "B":
-        print("Visualise Data.")
+        while True :
+            visual_choice = tui.get_visualise_choice().upper()
+            if visual_choice == "A":
+                park_reviews = process.get_reviews_by_park(dataset)
+                visual.pie_chart_reviews_by_park(park_reviews)
+            elif visual_choice == "X":
+                break
+            else:
+                print("Invalid choice, please try again.")
 
     elif choice == "X":
         print("Goodbye!"),

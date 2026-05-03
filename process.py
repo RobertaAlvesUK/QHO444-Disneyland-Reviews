@@ -73,3 +73,5 @@ def get_avg_ratings_by_park_and_year(dataset, park_name, year):
         return round(total/count, 2)
     else:
         return 0
+
+def get_avg_ratings_by_country_for_park(dataset, park_name):

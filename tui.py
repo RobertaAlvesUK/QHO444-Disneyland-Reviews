@@ -78,3 +78,12 @@ def get_year():
     print()
     choice = input("Please enter a year: ")
     return choice
+
+def get_visualise_choice():
+    print()
+    print("[A] Pie Chart - Reviews by Park")
+    print("[B] Bar Chart - Top 10 Locations by Rating")
+    print("[C] Bar Chart - Average Rating by Month")
+    print("[X] Return to Main Menu")
+    choice = input("Please enter the letter which corresponds with your desired menu choice: ")
+    return choice
