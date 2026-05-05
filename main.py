@@ -16,6 +16,7 @@ tui.display_header()
 
 dataset = process.process_data()
 tui.display_data(dataset)
+
 while True:
     choice = tui.get_menu_choice()
 
@@ -97,7 +98,7 @@ while True:
             elif visual_choice == "B":
                 park_name=""
                 while True:
-                    park_choice = tui.get_park_name()
+                    park_choice = tui.get_park_name().upper()
 
                     if park_choice == "1":
                         park_name = "Disneyland_California"
@@ -120,7 +121,7 @@ while True:
             elif visual_choice == "C":
                 park_name = ""
                 while True:
-                    park_choice = tui.get_park_name()
+                    park_choice = tui.get_park_name().upper()
                     if park_choice == "1":
                        park_name = "Disneyland_California"
                        break
@@ -138,11 +139,11 @@ while True:
                         monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
                         visual.bar_chart_avg_by_month(monthly_data)
 
-                    elif visual_choice == "X":
-                       print("Returning to main menu.")
-                if park_name != "":
-                     monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
-                     visual.bar_chart_avg_by_month(monthly_data)
+            elif visual_choice == "X":
+                print("Returning to main menu.")
+                break
+            else:
+                print("Invalid choice, please try again.")
 
     elif choice == "X":
         print("Goodbye!"),
