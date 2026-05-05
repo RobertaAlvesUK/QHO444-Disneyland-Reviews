@@ -75,3 +75,19 @@ def get_avg_ratings_by_park_and_year(dataset, park_name, year):
         return 0
 
 def get_avg_ratings_by_country_for_park(dataset, park_name):
+    total = {}
+    count ={}
+    for row in dataset[1:]:
+        if row[4] == park_name:
+            country = row[3]
+            if country not in total:
+                total[country] = 0
+                count[country] = 0
+            total[country] += int(row[1])
+            count[country] += 1
+    average = {}
+    for country in total:
+       average[country] = round(total[country]/count[country], 2)
+    sorted_average = sorted(average.items(), key=lambda x: x[1], reverse=True)
+    return sorted_average[:10]
+

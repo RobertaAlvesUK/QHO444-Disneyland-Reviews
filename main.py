@@ -11,7 +11,6 @@ Note:   any user input/output should be done in the module 'tui'
 import tui
 import process
 import visual
-from process import get_park_reviews
 
 tui.display_header()
 
@@ -82,7 +81,6 @@ while True:
             elif data_choice == "X":
                 print("Returning to main menu.")
                 break
-
             else:
                 print("Invalid choice, please try again.")
 
@@ -92,7 +90,28 @@ while True:
             if visual_choice == "A":
                 park_reviews = process.get_reviews_by_park(dataset)
                 visual.pie_chart_reviews_by_park(park_reviews)
+            elif visual_choice == "B":
+                park_name=""
+                while True:
+                    park_choice = tui.get_park_name()
+                    if park_choice == "1":
+                        park_name = "Disneyland_California"
+                        break
+                    elif park_choice == "2":
+                        park_name = "Disneyland_Paris"
+                        break
+                    elif park_choice == "3":
+                        park_name = "Disneyland_HongKong"
+                        break
+                    elif park_choice == "X":
+                        break
+                    else:
+                        print("Invalid choice, please try again.")
+                if park_name != "":
+                    top_countries = process.get_avg_ratings_by_country_for_park(dataset, park_name)
+                    visual.bar_chart_avg_by_country(top_countries)
             elif visual_choice == "X":
+                print("Returning to main menu.")
                 break
             else:
                 print("Invalid choice, please try again.")

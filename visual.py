@@ -11,3 +11,9 @@ def pie_chart_reviews_by_park(park_counts):
     plt.title("Reviews by Park")
     plt.show()
 
+def bar_chart_avg_by_country(top_countries):
+    x = [item[0] for item in top_countries]
+    y = [item[1] for item in top_countries]
+    plt.bar(x, y)
+    plt.title("Average Reviews by Country")
+    plt.show()
