@@ -91,3 +91,20 @@ def get_avg_ratings_by_country_for_park(dataset, park_name):
     sorted_average = sorted(average.items(), key=lambda x: x[1], reverse=True)
     return sorted_average[:10]
 
+def get_avg_ratings_by_month(dataset, park_name):
+    total = {}
+    count = {}
+    for row in dataset[1:]:
+        if row[4] == park_name and "-" in row[2]:
+            if row[4] == park_name:
+               month = row[2].split("-")[1]
+               if month not in total:
+                   total[month] = 0
+                   count[month] = 0
+               total[month] += int(row[1])
+               count[month] += 1
+    average = {}
+    for month in total:
+        average[month] = round(total[month]/count[month], 2)
+    return sorted(average.items(), key=lambda x: int(x[0]))
+

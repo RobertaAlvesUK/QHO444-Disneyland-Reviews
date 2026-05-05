@@ -22,6 +22,7 @@ while True:
     if choice == "A":
         while True:
             data_choice = tui.get_data_choice()
+
             if data_choice == "A":
                 park_choice = tui.get_park_name()
                 if park_choice == "1":
@@ -69,6 +70,7 @@ while True:
                         park_name = "Disneyland_Paris"
                     elif park_choice == "3":
                         park_name = "Disneyland_HongKong"
+
                     elif park_choice == "X":
                         break
                     else:
@@ -87,13 +89,16 @@ while True:
     elif choice == "B":
         while True :
             visual_choice = tui.get_visualise_choice().upper()
+
             if visual_choice == "A":
                 park_reviews = process.get_reviews_by_park(dataset)
                 visual.pie_chart_reviews_by_park(park_reviews)
+
             elif visual_choice == "B":
                 park_name=""
                 while True:
                     park_choice = tui.get_park_name()
+
                     if park_choice == "1":
                         park_name = "Disneyland_California"
                         break
@@ -103,6 +108,7 @@ while True:
                     elif park_choice == "3":
                         park_name = "Disneyland_HongKong"
                         break
+
                     elif park_choice == "X":
                         break
                     else:
@@ -110,11 +116,33 @@ while True:
                 if park_name != "":
                     top_countries = process.get_avg_ratings_by_country_for_park(dataset, park_name)
                     visual.bar_chart_avg_by_country(top_countries)
-            elif visual_choice == "X":
-                print("Returning to main menu.")
-                break
-            else:
-                print("Invalid choice, please try again.")
+
+            elif visual_choice == "C":
+                park_name = ""
+                while True:
+                    park_choice = tui.get_park_name()
+                    if park_choice == "1":
+                       park_name = "Disneyland_California"
+                       break
+                    elif park_choice == "2":
+                       park_name = "Disneyland_Paris"
+                       break
+                    elif park_choice == "3":
+                       park_name = "Disneyland_HongKong"
+                       break
+                    elif park_choice == "X":
+                       break
+                    else:
+                        print("Invalid choice, please try again.")
+                    if park_name != "":
+                        monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
+                        visual.bar_chart_avg_by_month(monthly_data)
+
+                    elif visual_choice == "X":
+                       print("Returning to main menu.")
+                if park_name != "":
+                     monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
+                     visual.bar_chart_avg_by_month(monthly_data)
 
     elif choice == "X":
         print("Goodbye!"),
