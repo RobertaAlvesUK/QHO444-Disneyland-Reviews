@@ -15,7 +15,9 @@ def bar_chart_avg_by_country(top_countries):
     x = [item[0] for item in top_countries]
     y = [item[1] for item in top_countries]
     plt.bar(x, y)
+    plt.xticks(rotation=45, ha="right")
     plt.title("Average Reviews by Country")
+    plt.tight_layout()
     plt.show()
 
 def bar_chart_avg_by_month(monthly_data):
