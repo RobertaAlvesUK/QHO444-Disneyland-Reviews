@@ -18,11 +18,11 @@ dataset = process.process_data()
 tui.display_data(dataset)
 
 while True:
-    choice = tui.get_menu_choice()
+    choice = tui.get_menu_choice().upper()
 
     if choice == "A":
         while True:
-            data_choice = tui.get_data_choice()
+            data_choice = tui.get_data_choice().upper()
 
             if data_choice == "A":
                 park_choice = tui.get_park_name()
@@ -41,7 +41,7 @@ while True:
             elif data_choice == "B":
                 park_name = ""
                 while True:
-                    park_choice = tui.get_park_name()
+                    park_choice = tui.get_park_name().upper()
                     if park_choice == "1":
                         park_name = "Disneyland_California"
                     elif park_choice == "2":
@@ -64,7 +64,7 @@ while True:
             elif data_choice == "D":
                 park_name = ""
                 while True:
-                    park_choice = tui.get_park_name()
+                    park_choice = tui.get_park_name().upper()
                     if park_choice == "1":
                         park_name = "Disneyland_California"
                     elif park_choice == "2":
@@ -80,6 +80,10 @@ while True:
                         year = tui.get_year()
                         avg = process.get_avg_ratings_by_park_and_year(dataset, park_name, year)
                         tui.display_avg_by_park_and_year(avg, park_name, year)
+
+            elif data_choice == "E":
+                average = process.get_avg_ratings_by_park_and_country(dataset)
+                tui.display_avg_ratings_by_park_and_country(average)
 
             elif data_choice == "X":
                 print("Returning to main menu.")
@@ -135,9 +139,9 @@ while True:
                        break
                     else:
                         print("Invalid choice, please try again.")
-                    if park_name != "":
-                        monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
-                        visual.bar_chart_avg_by_month(monthly_data)
+                if park_name != "":
+                     monthly_data = process.get_avg_ratings_by_month(dataset, park_name)
+                     visual.bar_chart_avg_by_month(monthly_data)
 
             elif visual_choice == "X":
                 print("Returning to main menu.")

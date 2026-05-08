@@ -108,3 +108,18 @@ def get_avg_ratings_by_month(dataset, park_name):
         average[month] = round(total[month]/count[month], 2)
     return sorted(average.items(), key=lambda x: int(x[0]))
 
+def get_avg_ratings_by_park_and_country(dataset):
+    total = {}
+    count = {}
+    for row in dataset[1:]:
+        if len(row) >= 5:
+            key = (row[4], row[3])
+            if key not in total:
+                total[key] = 0
+                count[key] = 0
+            total[key] += int(row[1])
+            count[key] += 1
+    average = {}
+    for key in total:
+        average[key] = round(total[key]/count[key], 2)
+    return sorted(average.items())

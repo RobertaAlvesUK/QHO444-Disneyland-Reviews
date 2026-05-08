@@ -43,6 +43,13 @@ def display_reviews_by_park_and_country(count, park_name, country_name):
 def display_avg_by_park_and_year(avg, park_name, year):
     print(f"The average rating for {park_name} in {year} is {avg}.")
 
+def display_avg_ratings_by_park_and_country(results):
+    print()
+    for row in results:
+        print(f"{row[0][0]} - {row[0][1]}: {row[1]}")
+
+
+
 def get_menu_choice():
     print()
     print("[A] View Data")
@@ -57,6 +64,7 @@ def get_data_choice():
     print("[B] Park Ranking by Nationality")
     print("[C] Most Popular Month by Park")
     print("[D] Average Rating by Park and Year")
+    print("[E] Average Rating by Park and Country")
     print("[X] Return to Main Menu")
     choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
     return choice
