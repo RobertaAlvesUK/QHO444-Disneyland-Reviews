@@ -54,8 +54,18 @@ def get_menu_choice():
     print()
     print("[A] View Data")
     print("[B] Visualise Data")
+    print("[C] Export Data")
     print("[X] Exit")
     choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
+    return choice
+
+def get_export_choice():
+    print()
+    print("[T] Export as TXT")
+    print("[C] Export as CSV")
+    print("[J] Export as JSON")
+    print("[X] Exit")
+    choice = input("Please enter the letter which corresponds with your desired menu choice: ")
     return choice
 
 def get_data_choice():

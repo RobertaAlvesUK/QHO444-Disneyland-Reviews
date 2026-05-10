@@ -11,6 +11,7 @@ Note:   any user input/output should be done in the module 'tui'
 import tui
 import process
 import visual
+import export
 
 tui.display_header()
 
@@ -148,6 +149,28 @@ while True:
                 break
             else:
                 print("Invalid choice, please try again.")
+
+    elif choice == "C":
+        exporter = export.ExportDisney(dataset)
+        stats = exporter.get_park_stats()
+        export_choice = tui.get_export_choice().upper()
+        if export_choice == "T":
+            exporter.export_txt(stats)
+            print("Data Exported Successfully")
+        elif export_choice == "C":
+            exporter.export_csv(stats)
+            print("Data Exported Successfully")
+        elif export_choice == "J":
+            exporter.export_json(stats)
+            print("Data Exported Successfully")
+        elif export_choice == "X":
+            print("Returning to main menu.")
+
+
+
+
+
+
 
     elif choice == "X":
         print("Goodbye!"),
