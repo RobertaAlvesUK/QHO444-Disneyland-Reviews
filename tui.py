@@ -1,7 +1,7 @@
 """
 TUI is short for Text-User Interface. This module is responsible for communicating with the user.
 The functions in this module will display information to the user and/or retrieve a response from the user.
-Each function in this module should utilise any parameters and perform user input/output.
+Each function in this module should utilize any parameters and perform user input/output.
 A function may also need to format and/or structure a response e.g. return a list, tuple, etc.
 Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
@@ -72,9 +72,8 @@ def get_data_choice():
     print()
     print("[A] Most Reviewed Parks")
     print("[B] Park Ranking by Nationality")
-    print("[C] Most Popular Month by Park")
-    print("[D] Average Rating by Park and Year")
-    print("[E] Average Rating by Park and Country")
+    print("[C] Average Rating by Park and Year")
+    print("[D] Average Rating by Park and Country")
     print("[X] Return to Main Menu")
     choice = input("Please enter the letter which corresponds with your desired menu choice: ") .upper()
     return choice

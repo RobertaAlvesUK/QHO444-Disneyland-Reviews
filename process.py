@@ -41,20 +41,6 @@ def get_ratings_by_country(dataset):
 
     return sorted_country_counts
 
-
-def get_park_months(dataset):
-    park_months = {}
-    for row in dataset[1:]:
-        if row[4] not in park_months:
-            park_months[row[4]] = {}
-        if "-" in row[2]:
-            month = row[2].split("-")[1]
-            if month not in park_months[row[4]]:
-                park_months[row[4]][month] = 1
-            else:
-                park_months[row[4]][month] += 1
-    return park_months
-
 def get_reviews_by_park_and_country(dataset, park_name, country_name):
     reviews = []
     for row in dataset:

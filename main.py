@@ -1,11 +1,11 @@
 """
 This module is responsible for the overall program flow. It controls how the user interacts with the
 program and how the program behaves. It uses the other modules to interact with the user, carry out
-processing, and for visualising information.
+processing, and for visualizing information.
 
 Note:   any user input/output should be done in the module 'tui'
         any processing should be done in the module 'process'
-        any visualisation should be done in the module 'visual'
+        any visualization should be done in the module 'visual'
 """
 
 import tui
@@ -59,10 +59,6 @@ while True:
                        tui.display_reviews_by_park_and_country(len(reviews), park_name, country_name)
 
             elif data_choice == "C":
-                park_months = process.get_park_months(dataset)
-                tui.display_park_months(park_months)
-
-            elif data_choice == "D":
                 park_name = ""
                 while True:
                     park_choice = tui.get_park_name().upper()
@@ -82,7 +78,7 @@ while True:
                         avg = process.get_avg_ratings_by_park_and_year(dataset, park_name, year)
                         tui.display_avg_by_park_and_year(avg, park_name, year)
 
-            elif data_choice == "E":
+            elif data_choice == "D":
                 average = process.get_avg_ratings_by_park_and_country(dataset)
                 tui.display_avg_ratings_by_park_and_country(average)
 
@@ -165,12 +161,6 @@ while True:
             print("Data Exported Successfully")
         elif export_choice == "X":
             print("Returning to main menu.")
-
-
-
-
-
-
 
     elif choice == "X":
         print("Goodbye!"),

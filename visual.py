@@ -1,9 +1,10 @@
 """
-This module is responsible for visualising the data using Matplotlib.
-Any visualisations should be generated via functions in this module.
+This module is responsible for visualizing the data using Matplotlib.
+Any visualizations should be generated via functions in this module.
 """
 
 import matplotlib.pyplot as plt
+
 def pie_chart_reviews_by_park(park_counts):
     labels = [item[0] for item in park_counts]
     values = [item[1] for item in park_counts]
